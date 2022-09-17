@@ -9,5 +9,7 @@ const operationCtrl = new OperationController(operationUseCase)
 route.post(`/operation`, operationCtrl.insertCtrl)
 route.get(`/operation`, operationCtrl.getCtrl)
 route.get(`/operations`, operationCtrl.getAllCtrl)
+route.patch(`/operation`, operationCtrl.modifyOperationCtrl)
+route.delete(`/operation`, operationCtrl.deleteOperationCtrl)
 
 export default route

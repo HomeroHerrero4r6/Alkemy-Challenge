@@ -11,9 +11,18 @@ export class MongoRepository implements OperationRepository{
         return operation
     }
     async listAllOperation():Promise<any>{
-        console.log('hola')
         const operations = await OperationModel.find()
-        console.log(operations)
         return operations
+    }
+    async modifyOperation(_id:string,concept:string,amount:number):Promise<any>{
+        const operation = await OperationModel.findOneAndUpdate({_id:_id},{
+            amount:amount,
+            concept:concept
+        })
+        return operation
+    }
+    async deleteOperation(_id:string):Promise<any>{
+        const operation = await OperationModel.findOneAndDelete({_id:_id})
+        return operation
     }
 }

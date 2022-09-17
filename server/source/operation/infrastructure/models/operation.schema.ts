@@ -11,6 +11,11 @@ const OperationSchema = new Schema(
         date:{
             type:Date
         },
+        category: {
+            type: String,
+            enum : ["Services","Health","Food","Taxes"],
+            default: "Services"
+        },
         type: {
             type: String,
             enum : ["bills","profit"],

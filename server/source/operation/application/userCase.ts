@@ -22,8 +22,15 @@ export class OperationUseCase{
         return operation
     }
     public async listOperations() {
-        console.log('hola')
         const operations = await this.operationRepository.listAllOperation()
         return operations
+    }
+    public async modifyOperation(_id:string,concept:string,amount:number,category:string) {
+        const operation = await this.operationRepository.modifyOperation(_id,concept,amount,category)
+        return operation
+    }
+    public async deleteOperation(_id:string) {
+        const operation = await this.operationRepository.deleteOperation(_id)
+        return operation
     }
 }
