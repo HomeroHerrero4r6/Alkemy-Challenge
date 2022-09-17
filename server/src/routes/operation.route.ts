@@ -1,8 +1,9 @@
-import { Router } from "express";
-import { insertOperation } from "../controllers/operation.controller";
+import express from "express";
+import { getOperation, insertOperation } from "../controllers/operation.controller";
 
-const route = Router()
+const route = express.Router()
 
 route.post(`/operation`,insertOperation)
+route.get(`/operation`,getOperation)
 
 export default route

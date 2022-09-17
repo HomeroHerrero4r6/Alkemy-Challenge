@@ -6,8 +6,10 @@ const registerOperation =async (operation:OperationInterface) => {
     return response;
 };
 
-const getAmountOperation = async (id:number) => {
-    const response = await OperationModel.findById({id})
+const getAmountOperation = async (id:string) => {
+    console.log(id)
+    const response = await OperationModel.findOne({_id:id})
+    console.log(response)
     return response
 }
 
