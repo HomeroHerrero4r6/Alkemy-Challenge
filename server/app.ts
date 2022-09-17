@@ -1,8 +1,8 @@
 import "dotenv/config"
 import express  from "express";
 import cors from "cors";
-import operationRoute from "./routes/operation.route"
-import dbInit from './db/mongo';
+import operationRoute from "./source/operation/infrastructure/routes/operation.route"
+import dbInit from './source/operation/infrastructure/db/mongo';
 const app = express();
 app.use(express.json())
 app.use(cors());

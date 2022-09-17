@@ -13,8 +13,7 @@ const OperationSchema = new Schema(
         },
         type: {
             type: String,
-            enum : ["Services","Health","Food","Taxes"],
-            default: "Services"
+            enum : ["bills","profit"],
         },
     }
 )
